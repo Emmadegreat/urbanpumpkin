@@ -143,7 +143,7 @@ main{
 }
 
 .section-wrapper{
-    padding: 60px 40px 40px 40px;
+    padding: 60px 40px 10px 40px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -152,7 +152,7 @@ main{
 .section-container{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .section-card{
@@ -190,50 +190,54 @@ main{
     color: #45513F;
     line-height: 1.6;
     font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 24px;
+    font-weight: 400;
+    margin-bottom: 16px;
 }
 
 
 .leadership-section{
-    padding: 10px 0px 0px 0px;
+    padding: 10px 0px;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
     position: relative;
-    bottom: 0;
+    overflow: hidden;
 }
 
 .leadership-section::before{
     content: "";
+    position: absolute;
     background-image: url("../images/background.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    z-index: -1;
+    height: 100%;
     width: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
 }
 
 .leadership-container{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 0px 40px;
-    top: 100px;
-    align-items: center;
-    position: absolute;
+    padding: 20px 40px 80px 40px;
+    position: relative;
 }
 
 .leadership-card{
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 16px;
 }
 
 .leadership-card img{
     width: 100%;
     height: auto;
-    max-width: 400px;
+    max-width: 300px;
 }
 
 .leadership-card h3{
@@ -247,26 +251,26 @@ main{
     color: #45513F;
     line-height: 1.6;
     font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 24px;
+    font-weight: 400;
+    margin-bottom: 16px;
 }
 
 
 footer{
     background-color: #45513F;
+    padding: 0px 4px 4px 4px;
     position: relative;
     margin-top: -16px;
-    padding: 0px 4px 4px 4px;
 }
 
 .newsletter{
     background-color: #F6E0BB;
     position: absolute;
-    top: -60px;
+    top: -50px;
     z-index: 500;
     padding: 20px;
-    left: 20%;
-    right: 20%;
+    left: 15%;
+    right: 15%;
     border-bottom-left-radius: 50px;
     border-top-right-radius: 50px;
 
@@ -276,6 +280,7 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .newsletter-card{
@@ -428,12 +433,12 @@ footer{
     }
 
     .section-wrapper{
-        padding: 60px 30px 40px 30px;
+        padding: 40px 30px 40px 30px;
     }
     .section-container{
         display: flex;
         flex-direction: column;
-        margin-bottom: 80px;
+        margin-bottom: 40px;
     }
     #first-order{
         order: 2;
@@ -443,27 +448,23 @@ footer{
     }
 
     .leadership-container{
-        display: flex;
         flex-direction: column;
-        margin-bottom: 90px;
-        top: 20px;
+        padding: 0rem 30px;
         align-items: center;
-        position: absolute;
-    }
+        position: relative;
+        bottom: 30px;
 
-    .leadership-section::before{
-        height: 140vh;
     }
 
     .leadership-card img{
-        width: 100%;
-        height: auto;
         max-width: 200px;
     }
 
+
+
     .newsletter{
-       left: 5%;
-       right: 5%;
+     left: 5%;
+     right: 5%;
     }
     .newsletter-wrapper{
         display: flex;
@@ -471,11 +472,17 @@ footer{
         align-items: center;
     }
 
+    .newsletter-card:nth-child(2){
+        right: 16px;
+    }
+
     .footer-wrapper{
         margin: 30px 20px;
         display: flex;
         flex-direction: column;
-
+    }
+    .footer-card{
+        padding-top: 24px;
     }
 
     .footer-card:nth-child(1){
@@ -485,4 +492,46 @@ footer{
     .footer-copyright{
         padding: 24px 20px;
     }
+}
+
+@media screen and (max-width:500px) {
+    .section-wrapper{
+        padding: 40px 20px 10px 20px;
+    }
+
+    .section-container{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .section-card{
+        padding: 8px;
+    }
+
+    .section-card img{
+        width: 100%;
+        height: auto;
+    }
+
+    .section-card h3{
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 1.6;
+        margin-bottom: 8px;
+    }
+
+    .section-card p{
+        font-weight: 400;
+        margin-bottom: 16px;
+    }
+
+    .leadership-container{
+        padding: 0rem 20px;
+    }
+
+    footer{
+
+    }
+
 }
